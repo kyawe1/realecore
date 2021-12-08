@@ -1,0 +1,47 @@
+@model RealEstateCore.Models.ViewModel.HouseCreateViewModel
+@{
+    ViewData["Title"]="Create";
+}
+<form method='POST' asp-controller="House" asp-action='Create' enctype='multipart/form-data'>
+    <div asp-validation-summary="All"></div>
+    @Html.AntiForgeryToken()
+    <div class='m-2'>
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="House_Type" class='form-label'>House Type</label>
+        <input asp-for="House_Type" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="type" class='form-label'>Sale Or Rent</label>
+        <input asp-for="type" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="Address" class='form-label'> Address </label>
+        <input asp-for="Address" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="Detail" class='form-label'>Detail</label>
+        <textarea asp-for="Detail"></textarea>
+    </div>
+    <div class='m-2'>
+        <label asp-for="Price" class='form-label'>Price</label>
+        <input asp-for="Price" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="number_of_bathroom" class='form-label'>Number Of Bathroom</label>
+        <input asp-for="number_of_bathroom" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="number_of_bedroom" class='form-label'>Number Of Bedroom</label>
+        <input asp-for="number_of_bedroom" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <label asp-for="CoverPic" class='form-label'>Cover Picture</label>
+        <input asp-for="CoverPic" class='form-control' required>
+    </div>
+    <div class='m-2'>
+        <input type="submit" value="Create" class='btn btn-primary'>
+    </div>
+</form>
