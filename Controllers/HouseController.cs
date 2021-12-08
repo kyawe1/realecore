@@ -92,12 +92,27 @@ public class HouseController : Controller
         "number_of_bathroom",
         "Detail",
         "Address"
-    })] House house)
+    })] HouseCreateViewModel house)
     {
         if(! ModelState.IsValid){
             return View(house);
         }
-        _context.Update(house); 
+        var j=_context.houses.FirstOrDefault(i=>i.Id==id);
+        if(j!=null)
+        {
+            j.Address=house.Address;
+            j.Name=house.Name;
+            j.Price=house.Price;
+            j.type=house.type;
+            j.House_Type=house.House_Type;
+            j.number_of_bathroom=house.number_of_bathroom;
+            j.number_of_bedroom=house.number_of_bedroom;
+            j.Detail=house.Detail;
+        }
+        string location=$"houses/{house.getEsapcedString()}/{Convert.ToString((Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds)}-{house.getEsapcedString()}.png";
+        var path=_fileStore.Save(house.CoverPic,location,house.getEsapcedString());
+        j.path=path;
+        _context.Update(j); 
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }
