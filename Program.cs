@@ -5,14 +5,18 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI;
 using RealEstateCore.Services;
+using Microsoft.EntityFrameworkCore;
 using RealEstateCore.Services.Doers;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+var version=new MySqlServerVersion(new Version(8,0,28));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<DefaultDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultDbContext")));
+builder.Services.AddDbContext<DefaultDbContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultDbContext"),version));
 builder.Services.AddDefaultIdentity<ApplicationUser>(options=>options.SignIn.RequireConfirmedAccount=false).AddRoles<IdentityRole>().AddEntityFrameworkStores<DefaultDbContext>();
 builder.Services.AddSingleton<IFileStore,StoreFile>();
     

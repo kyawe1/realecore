@@ -29,9 +29,12 @@ public class DefaultDbContext : IdentityDbContext<ApplicationUser>
             Id=userId,
             UserName="one@one.com",
             Email="one@one.com",
+            SecurityStamp=Guid.NewGuid().ToString(),
+            NormalizedEmail="ONE@ONE.COM",
+            NormalizedUserName="ONE@ONE.COM"
         };
         IPasswordHasher<ApplicationUser> hasher=new PasswordHasher<ApplicationUser>();
-        user.PasswordHash=hasher.HashPassword(user,"123112");
+        user.PasswordHash=hasher.HashPassword(user,"123456");
         builder.Entity<ApplicationUser>().HasData(user);
         builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>(){
             RoleId=RoleId,
