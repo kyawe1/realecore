@@ -1,0 +1,61 @@
+@model IEnumerable<RealEstateCore.Models.Entity.House>
+@{
+    ViewData["Title"]="Index";
+}
+@if(TempData["signal"]!=null){
+    <ul>
+        <li>
+            @TempData["signal"]
+        </li>
+    </ul>
+}
+<table class='table table-active'>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model=> model.Name)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model=>model.House_Type)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model=> model.type)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model=>model.Address)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model=> model.Price)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model=>model.number_of_bathroom)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model=> model.number_of_bedroom)
+        </td>
+    </tr>
+    @foreach(var i in Model){
+        <tr>
+            <td>
+                @i.Name
+            </td>
+            <td>
+                @i.House_Type
+            </td>
+            <td>
+                @i.type
+            </td>
+            <td>
+                @i.Address
+            </td>
+            <td>
+                @i.Price
+            </td>
+            <td>
+                @i.number_of_bathroom
+            </td>
+            <td>
+                @i.number_of_bedroom
+            </td>
+        </tr>
+    }
+</table>

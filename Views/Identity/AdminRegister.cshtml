@@ -1,0 +1,24 @@
+@model RealEstateCore.Models.ViewModel.RegisterViewModel
+
+@{
+    ViewData["Title"]="Admin Register";
+}
+
+<form method="POST" asp-controller="Identity" asp-action="AdminRegister">
+    @Html.AntiForgeryToken()
+    <div class='m-2'>
+        <label asp-for="email" class='from-label'>Email</label>
+        <input asp-for="email" class='form-control'>
+    </div>
+    <div class='m-2'>
+        <label asp-for="password" class='from-label'>Password</label>
+        <input asp-for="password" class='form-control'>
+    </div>
+    <div class='m-2'>
+        <label asp-for="confirm_password" class='from-label' >Confirm Password</label>
+        <input asp-for="confirm_password" class='form-control'>
+    </div>
+    <div class='m-2'>
+        <input type="submit" value="Create">
+    </div>
+</form>

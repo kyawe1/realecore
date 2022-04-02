@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RealEstateCore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealEstateCore.styles.css" asp-append-version="true" />
+</head>
+
+<body class='ok'>
+    <header class='px-2 py-1 primaryly'>
+
+        <div class='navbar navbar-expand-lg navbar-light  my-2'>
+            <div class='navbar-brand w-25'>
+                <img src='~/img/logo.svg' class='img-fluid' />
+            </div>
+            <button class='navbar-toggler' type="button" data-bs-toggle='collapse' data-bs-target='#collapseable'
+                aria-controls='collapseable' aria-expanded='false' aria-label='toggle position'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='collapseable'>
+                <ul class='navbar-nav ms-auto'>
+                    <li class='nav-item mx-2'><a asp-controller="Home" asp-action="Index" class='nav-link text-white'>Home</a></li>
+                    <li class='nav-item mx-2'><a asp-controller="Home" asp-action="Privacy" class='nav-link text-white'>About</a></li>
+                    <li class='nav-item mx-2'><a asp-controller="Home" asp-action="Search" asp-route-id="Rent" class='nav-link text-white'>Rent</a></li>
+                    <li class='nav-item mx-2'><a asp-controller="Home" asp-action="Search" asp-route-id="Sale" class='nav-link text-white'>Buy</a></li>
+                    @* <li class='nav-item mx-2'><a href='newspg.html' class='nav-link text-white'>News</a></li> *@
+                    <partial name="_LoginPartial"></partial>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container ok">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted primaryly">
+        <div class='p-2'>
+            <img src='~/img/logo.svg' width=100 height=50>
+            Premier
+            <div class='text-wrap'>
+                No 50,coner of myintawthar st and aungthitsar st,<br>
+                tharkayta.
+            </div>
+        </div>
+        <div class='p-2'>
+            This is brought to you by the Developer Team of blah blah blah
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <partial name="_ValidationScriptsPartial"></partial>
+</body>
+
+</html>
