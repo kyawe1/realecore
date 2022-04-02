@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "H:\\users\\lenovo\\asp_net_dump\\RealEstateCore\\RealEstateCore.csproj": {}
+    "/home/kyawe/realecore/RealEstateCore.csproj": {}
   },
   "projects": {
-    "H:\\users\\lenovo\\asp_net_dump\\RealEstateCore\\RealEstateCore.csproj": {
+    "/home/kyawe/realecore/RealEstateCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\users\\lenovo\\asp_net_dump\\RealEstateCore\\RealEstateCore.csproj",
+        "projectUniqueName": "/home/kyawe/realecore/RealEstateCore.csproj",
         "projectName": "RealEstateCore",
-        "projectPath": "H:\\users\\lenovo\\asp_net_dump\\RealEstateCore\\RealEstateCore.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "H:\\users\\lenovo\\asp_net_dump\\RealEstateCore\\obj\\",
+        "projectPath": "/home/kyawe/realecore/RealEstateCore.csproj",
+        "packagesPath": "/home/kyawe/.nuget/packages/",
+        "outputPath": "/home/kyawe/realecore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/kyawe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -87,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
         }
       }
     }
